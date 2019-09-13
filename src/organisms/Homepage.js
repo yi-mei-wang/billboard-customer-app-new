@@ -1,5 +1,4 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
 import { Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 import BottomBar from "../components/Bottom";
@@ -76,7 +75,8 @@ class Homepage extends React.Component {
 
           {Container}
 
-          <BottomBar history={history} />
+          {currentUser !== null && <BottomBar history={history} />}
+
         </Main>
       </>
     );

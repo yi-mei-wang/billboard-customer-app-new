@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import success from './images/Check-Mark-Icon-3.png'
-import failed from './images/Failed-Icon-3.png'
+import success from '../images/Check-Mark-Icon-3.png'
+import failed from '../images/Failed-Icon-3.png'
 
 class ResultMessage extends Component {
     constructor(props) {

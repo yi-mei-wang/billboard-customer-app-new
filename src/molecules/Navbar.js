@@ -10,7 +10,7 @@ import {
 } from "reactstrap";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import logo from "./images/logo.png";
+import logo from "../images/advengerslogo.png";
 
 const Logo = styled.h3`
   font-family: "Pacifico", cursive;

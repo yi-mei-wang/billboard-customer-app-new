@@ -1,5 +1,5 @@
 import React from 'react';
-import loadSpinner from './images/Ellipsis-2s-200px.gif'
+import loadSpinner from '../images/Ellipsis-2s-200px.gif'
 
 const LoadSpinner = props => {
     return (

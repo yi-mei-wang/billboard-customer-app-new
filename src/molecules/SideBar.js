@@ -55,7 +55,7 @@ class SideBar extends React.Component {
             alt="Logo"
           />
           <Welcome className={"mt-4"}> {username !== null ? "Welcome back," : "Hello there!"}</Welcome>
-          {username !== null &&
+          {username !== null ?
             <>
               <Welcome className={"mb-4"}>
                 <i>{username}!</i>
@@ -69,6 +69,15 @@ class SideBar extends React.Component {
                 Log Out
               </Button>
             </>
+            :
+            <Button
+              className=""
+              onClick={() => {
+                this.props.removeUser();
+              }}
+            >
+              Log In
+              </Button>
           }
         </div>
       </div>
