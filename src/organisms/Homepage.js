@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 import BottomBar from "../molecules/Bottom";
 import CallToAction from "../molecules/CallToAction";
+import HowDoesItWork from "../molecules/HowDoesItWork";
 import Navbar from "../molecules/Navbar";
 import SideBar from "../molecules/SideBar";
 import ExpiredAds from "../molecules/ads/ExpiredAds";
@@ -37,7 +38,10 @@ class Homepage extends React.Component {
     let Container =
       this.props.match.url === "/" ?
         // <Selection history={history} /> 
-        <CallToAction />
+        <>
+          <CallToAction />
+          <HowDoesItWork />
+        </>
         :
         <h1 />;
 
