@@ -10,7 +10,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import logo from "./images/logo.png";
+import logo from "../images/advengerslogo.png";
 import { DOMAIN_URL } from "../constants";
 
 class LoginModal extends React.Component {

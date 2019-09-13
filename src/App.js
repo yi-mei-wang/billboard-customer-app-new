@@ -2,10 +2,10 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 // Pages
-import Bottom from "./components/Bottom";
-import FormContainer from "./pages/FormContainer";
-import Homepage from "./pages/Homepage";
-import SideBar from "./components/SideBar";
+import Bottom from "./molecules/Bottom";
+import FormContainer from "./organisms/FormContainer";
+import Homepage from "./organisms/Homepage";
+import SideBar from "./molecules/SideBar";
 
 // Stylesheets
 import "./stylesheets/App.scss";

@@ -1,17 +1,30 @@
-import React from "react";
 import styled from "styled-components";
-import { ReactComponent as AddSvg } from "./images/add.svg";
-import { ReactComponent as PastAds } from "./images/list.svg";
-import { ReactComponent as FutureAds } from "./images/calendar.svg";
 
-const Bottom = styled.div`
+const Underline = styled.span`
+background-color: #ffbf00;
+width: 200px;
+height: 10px;
+display: inline-block;
+margin-bottom: 0.5rem;
+`
+
+const BottomContainer = styled.div`
   width: 100vw;
-  height: 60px;
-  background-color: #4056a1;
-  color: white;
+  height: 90px;
+  background-color: #3b4158;
+  border-radius: 10px 10px 0px 0px;
   position: fixed;
   bottom: 0;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+`;
+
+const Bottom = styled.div`
+  width: 100vw;
+  height: 80px;
+  background-color: #3b4158;
+  color: white;
+  position: fixed;
+  bottom: 0;
 
   display: flex;
   justify-content: space-between;
@@ -24,11 +37,11 @@ const Bottom = styled.div`
   }
 `;
 
-const AddButtonContainer = styled.div`
+const AddButtonBackground = styled.div`
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  bottom: 25px;
+  bottom: 46px;
   background-color: white;
   margin-right: auto;
   margin-left: auto;
@@ -41,12 +54,12 @@ const AddButton = styled.div`
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background-color: #4056a1;
+  background-color: #3b4158;
   margin-right: auto;
   margin-left: auto;
   position: fixed;
   left: 50%;
-  bottom: 29px;
+  bottom: 50px;
   transform: translate(-50%, 0);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   z-index: 1;
@@ -124,41 +137,4 @@ const Button = styled.button`
   }
 `;
 
-const BottomBar = ({ history }) => {
-  const handleExpired = e => {
-    history.push("/expired");
-  };
-  const handleScheduled = e => {
-    history.push("/scheduled");
-  };
-  const handleNew = e => {
-    history.push("/new");
-  };
-  return (
-    <>
-      <Bottom className={"px-5"}>
-        <Button>
-          <PastAds onClick={handleExpired} />
-          <small className="mt-1 text-center">Past Ads</small>
-        </Button>
-
-        <Button>
-          <FutureAds onClick={handleScheduled} style={{ zIndex: 10 }} />
-          <small className="mt-1 text-center">Future Ads</small>
-        </Button>
-      </Bottom>
-      {/* <NavLinks>Past Ads</NavLinks> */}
-      {/* <div
-      className="text-center"
-      style={{ width: "100vw", position: "fixed", bottom: "25px" }}
-    > */}
-      <AddButtonContainer />
-      <AddButton>
-        <AddSvg onClick={handleNew} />
-      </AddButton>
-      {/* </div> */}
-    </>
-  );
-};
-
-export default BottomBar;
+export { Underline, Bottom, BottomContainer, AddButton, AddButtonBackground, Button, NavLinks };

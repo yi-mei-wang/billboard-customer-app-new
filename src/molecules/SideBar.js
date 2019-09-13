@@ -1,19 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
-import logo from "./images/adlogo.png";
-import logo1 from "./images/adlogo1.png";
-
-const Logo = styled.h3`
-  font-family: "Staatliches", "open sans";
-`;
+import logo from "../images/advengerslogo.png";
 
 const Button = styled.button`
   text-align: center;
   color: #474350;
   background-color: #d79922;
   border: none;
-  /* display: flex;
-  justify-content: flex-start; */
   height: 30px;
   width: 100px;
 `;
@@ -37,12 +30,12 @@ class SideBar extends React.Component {
   };
 
   render() {
-    const { users, isSelf } = this.props;
     const { collapsed } = this.state;
     const handleSelection = e => {
       this.props.history.push("/");
     };
-    const username = localStorage.getItem("username");
+    let username = localStorage.getItem("username");
+
     return (
       <div
         className="sidebar-container"
@@ -56,23 +49,36 @@ class SideBar extends React.Component {
         </button>
         <div className="sidebar text-center d-flex flex-column align-items-center ">
           <img
-            src={logo1}
+            src={logo}
             style={{ width: "200px", marginBottom: "10px" }}
             onClick={handleSelection}
+            alt="Logo"
           />
-          {/* <img src={logo} style={{ width: "200px", marginBottom: "10px" }} onClick={handleSelection} /> */}
-          <Welcome className={"mt-4"}> Welcome back,</Welcome>
-          <Welcome className={"mb-4"}>
-            <i>{username}!</i>
-          </Welcome>
-          <Button
-            className=""
-            onClick={() => {
-              this.props.removeUser();
-            }}
-          >
-            Log Out
-          </Button>
+          <Welcome className={"mt-4"}> {username !== null ? "Welcome back," : "Hello there!"}</Welcome>
+          {username !== null ?
+            <>
+              <Welcome className={"mb-4"}>
+                <i>{username}!</i>
+              </Welcome>
+              <Button
+                className=""
+                onClick={() => {
+                  this.props.removeUser();
+                }}
+              >
+                Log Out
+              </Button>
+            </>
+            :
+            <Button
+              className=""
+              onClick={() => {
+                this.props.removeUser();
+              }}
+            >
+              Log In
+              </Button>
+          }
         </div>
       </div>
     );
