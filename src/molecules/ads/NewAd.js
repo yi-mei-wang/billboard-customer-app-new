@@ -7,7 +7,7 @@ import Calendar from "../Calendar";
 import Uploader from "../Uploader";
 import LoadSpinner from "../LoadSpinner";
 import { DOMAIN_URL } from "../../constants";
-import { Underline } from "../atoms"; 
+import { Underline } from "../../atoms";
 
 const Button = styled.button`
   background-color: white;
@@ -194,7 +194,7 @@ class NewAd extends Component {
     return (
       <div className={"px-4 mb-5"}>
         <h2 className={"pt-4 m-0"}>New ADs</h2>
-<Underline/>
+        <Underline />
         <form onSubmit={this.handleSubmit} className={"mx-auto"}>
           <h4>1. Select a date and time</h4>
           <div className="row p-3 mx-auto">

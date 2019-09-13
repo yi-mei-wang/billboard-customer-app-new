@@ -1,6 +1,6 @@
 import React from "react";
-import LoginForm from "../components/LoginForm";
-import SignUpForm from "../components/SignUpForm";
+import LoginForm from "../molecules/LoginForm";
+import SignUpForm from "../molecules/SignUpForm";
 import { Redirect } from "react-router-dom";
 
 

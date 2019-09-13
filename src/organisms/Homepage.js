@@ -1,16 +1,16 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import styled from "styled-components";
-import BottomBar from "../components/Bottom";
-import CallToAction from "../components/CallToAction";
-import Navbar from "../components/Navbar";
-import SideBar from "../components/SideBar";
-import ExpiredAds from "../components/ads/ExpiredAds";
-import ResultMessage from "../components/ResultMessage";
-import NewAd from "../components/ads/NewAd";
-import ScheduledAds from "../components/ads/ScheduledAds";
-import Selection from "../components/ads/Selection";
-import Summary from "../components/ads/Summary";
+import BottomBar from "../molecules/Bottom";
+import CallToAction from "../molecules/CallToAction";
+import Navbar from "../molecules/Navbar";
+import SideBar from "../molecules/SideBar";
+import ExpiredAds from "../molecules/ads/ExpiredAds";
+import ResultMessage from "../molecules/ResultMessage";
+import NewAd from "../molecules/ads/NewAd";
+import ScheduledAds from "../molecules/ads/ScheduledAds";
+import Selection from "../molecules/ads/Selection";
+import Summary from "../molecules/ads/Summary";
 import background from "../images/background.jpg"
 
 const Main = styled.div`
