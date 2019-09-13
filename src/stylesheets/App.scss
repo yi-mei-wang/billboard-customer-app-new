@@ -83,3 +83,11 @@ a {
 #divBG {
   background-color: #efe2ba;
 }
+
+.how-does-it-work {
+  svg {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
