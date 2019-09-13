@@ -16,14 +16,19 @@ import background from "../images/background.jpg"
 
 const Main = styled.div`
   // padding-top: 50px;
+`;
+
+const BackgroundImage = styled.div`
   background-image: url(${background});
   background-size: 100vw;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  width: 100vw;
   height: 100vh;
-`;
-
+  position: fixed;
+  z-index: -1;
+  `;
 
 class Homepage extends React.Component {
   constructor(props) {
@@ -49,7 +54,7 @@ class Homepage extends React.Component {
       <>
         {/* <Navbar history={history} removeUser={this.props.removeUser} /> */}
         <SideBar history={history} removeUser={this.props.removeUser} />
-
+        <BackgroundImage />
         <Main>
           <Switch>
             <Route
