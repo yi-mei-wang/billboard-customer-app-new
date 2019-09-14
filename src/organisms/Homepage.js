@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 import BottomBar from "../molecules/Bottom";
-import CallToAction from "../molecules/CallToAction";
+import Headings from "../molecules/Headings";
 import HowDoesItWork from "../molecules/HowDoesItWork";
 import Navbar from "../molecules/Navbar";
 import SideBar from "../molecules/SideBar";
@@ -44,7 +44,7 @@ class Homepage extends React.Component {
       this.props.match.url === "/" ?
         // <Selection history={history} /> 
         <>
-          <CallToAction />
+          <Headings />
           <HowDoesItWork />
         </>
         :
