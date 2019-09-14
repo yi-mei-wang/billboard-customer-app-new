@@ -32,6 +32,7 @@ const HowDoesItWork = () => (
           <p className="mt-2">Receive confirmation in as little as 15 seconds. If your ad passes our moderation, it will be sent for display on our billboards.</p>
         </div>
       </div>
+      <h1>ADVERTISE NOW!!!!!!</h1>
     </div>
   </>
 )

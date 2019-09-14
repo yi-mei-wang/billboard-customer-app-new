@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 
-const Calltoaction = styled.div`
+const HeadingContainer = styled.div`
 color: #fff;
 padding: 1.5rem;
 padding-right: 50px;
@@ -20,8 +20,8 @@ color: #3b4158;
 display: inline-block;
 `;
 
-const CallToAction = () => (
-  <Calltoaction>
+const Headings = () => (
+  <HeadingContainer>
     <div>
       <Heading className="my-1 p-2">Advertising </Heading>
     </div>
@@ -30,8 +30,8 @@ const CallToAction = () => (
     </div>
     <div>
       <Subheading className="my-2 p-2">Reach out to your customers now.</Subheading></div>
-  </Calltoaction>
+  </HeadingContainer>
 )
 
 
-export default CallToAction;
+export default Headings;
