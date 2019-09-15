@@ -1,9 +1,10 @@
 import React from 'react';
 import { Underline } from '../atoms';
+import CallToAction from "../atoms/CallToAction";
 import { ReactComponent as AISvg } from "../images/ai.svg";
 import { ReactComponent as ConfirmedOrderSvg } from "../images/confirmed_order.svg";
-import { ReactComponent as MobileSvg } from "../images/mobile.svg";
 import { ReactComponent as UploadingSvg } from "../images/uploading.svg";
+
 
 
 const HowDoesItWork = () => (
@@ -32,7 +33,10 @@ const HowDoesItWork = () => (
           <p className="mt-2">Receive confirmation in as little as 15 seconds. If your ad passes our moderation, it will be sent for display on our billboards.</p>
         </div>
       </div>
-      <h1>ADVERTISE NOW!!!!!!</h1>
+      <div style={{ "width": "100%", "display": "flex", "justifyContent": "center" }}>
+        <CallToAction />
+      </div>
+
     </div>
   </>
 )
