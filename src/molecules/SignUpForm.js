@@ -1,4 +1,5 @@
 import React from "react";
+import Axios from "axios";
 import {
   Col,
   Button,
@@ -9,7 +10,7 @@ import {
   Input
 } from "reactstrap";
 import { Link, withRouter } from "react-router-dom";
-import Axios from "axios";
+import logo from "../images/advengerslogo.png";
 import { DOMAIN_URL } from "../constants";
 
 class SignUpModal extends React.Component {
@@ -83,7 +84,12 @@ class SignUpModal extends React.Component {
   render() {
     return (
       <div>
-        <h2>Sign Up</h2>
+        <div className="text-center my-3">
+          <img src={logo} className="logo" alt="logo" />
+        </div>
+        <div style={{ "width": "100%", "text-align": "center" }}>
+          <h2>Sign Up</h2>
+        </div>
         <Form>
           <FormGroup row>
             {/* <Label for="username" sm={2}>
@@ -168,7 +174,7 @@ class SignUpModal extends React.Component {
         <br />
         <div className="text-center">
           <Button
-            color="primary"
+            style={{ "backgroundColor": "#d79922 !important" }}
             disabled={Boolean(
               this.state.username === "" ||
               this.state.email === "" ||

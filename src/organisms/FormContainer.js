@@ -8,7 +8,7 @@ class FormContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoginForm: true
+      isLoginForm: false
     };
   }
 
@@ -23,7 +23,7 @@ class FormContainer extends React.Component {
     const { currentUser } = this.props;
     if (currentUser) return <Redirect to='/' />;
     const { isLoginForm } = this.state;
-    let Container = isLoginForm ? (
+    let Container = isLoginForm !== false ? (
       <LoginForm
         handleToggle={this.handleToggle}
         setUser={this.props.setUser}
