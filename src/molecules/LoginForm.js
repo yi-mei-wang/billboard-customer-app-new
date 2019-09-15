@@ -1,6 +1,7 @@
 import React from "react";
+import axios from "axios";
+import styled from "styled-components";
 import {
-  Button,
   Form,
   FormGroup,
   Input,
@@ -9,9 +10,18 @@ import {
   FormFeedback
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import logo from "../images/advengerslogo.png";
+import { ReactComponent as Loader } from "../images/ballon.svg";
 import { DOMAIN_URL } from "../constants";
+
+const LoginButton = styled.button`
+  text-align: center;
+  color: #222;
+  background-color: pink;
+  border: none;
+  width: 150px;
+  height: 40px;
+`;
 
 class LoginModal extends React.Component {
   state = {
@@ -19,7 +29,8 @@ class LoginModal extends React.Component {
     password: "",
     resultMes: "",
     invalidUser: false,
-    invalidPassword: false
+    invalidPassword: false,
+    loading: false
   };
 
   handleUsernameChange = event => {
@@ -32,6 +43,9 @@ class LoginModal extends React.Component {
 
   handleLogin = () => {
     const { username, password } = this.state;
+
+    this.setState({ loading: true });
+
     axios({
       method: "POST",
       url: `${DOMAIN_URL}/api/v1/login`,
@@ -41,7 +55,8 @@ class LoginModal extends React.Component {
       }
     })
       .then(response => {
-        console.log(response);
+        this.setState({ loading: false });
+
         switch (response.data.status) {
           case 401:
             console.log("Wrong password");
@@ -69,6 +84,7 @@ class LoginModal extends React.Component {
   };
 
   render() {
+    let { loading } = this.state;
     return (
       <div>
         <div className="text-center my-3">
@@ -110,8 +126,7 @@ class LoginModal extends React.Component {
         </FormText>
         <br />
         <div className="text-center">
-          <Button
-            color="primary"
+          <LoginButton
             className={
               this.state.username !== "" && this.state.password !== ""
                 ? ""
@@ -122,7 +137,12 @@ class LoginModal extends React.Component {
             }}
           >
             Login
-          </Button>{" "}
+            {
+              loading
+              && <Loader />
+            }
+
+          </LoginButton>{" "}
         </div>
       </div>
     );

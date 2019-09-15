@@ -29,6 +29,10 @@ class SideBar extends React.Component {
     });
   };
 
+  toggleLoginPage = () => {
+    this.props.history.push("/login");
+  }
+
   render() {
     const { collapsed } = this.state;
     const handleSelection = e => {
@@ -44,7 +48,7 @@ class SideBar extends React.Component {
           height: collapsed ? "100vh" : "100vh"
         }}
       >
-        <button className="my-button" onClick={this.toggleSidebar}>
+        <button className="sidebar-button" onClick={this.toggleSidebar}>
           {collapsed ? "☰" : "X"}
         </button>
         <div className="sidebar text-center d-flex flex-column align-items-center ">
@@ -54,7 +58,15 @@ class SideBar extends React.Component {
             onClick={handleSelection}
             alt="Logo"
           />
-          <Welcome className={"mt-4"}> {username !== null ? "Welcome back," : "Hello there!"}</Welcome>
+
+          <Welcome className={"mt-4"}>
+            {
+              username !== null
+                ? "Welcome back,"
+                : "Hello there!"
+            }
+          </Welcome>
+
           {username !== null ?
             <>
               <Welcome className={"mb-4"}>
@@ -72,9 +84,7 @@ class SideBar extends React.Component {
             :
             <Button
               className=""
-              onClick={() => {
-                this.props.removeUser();
-              }}
+              onClick={this.toggleLoginPage}
             >
               Log In
               </Button>
