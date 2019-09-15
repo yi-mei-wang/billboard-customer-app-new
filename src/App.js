@@ -30,6 +30,8 @@ class App extends React.Component {
   // Upon loggin out, remove currentUser from state
   removeUser = () => {
     localStorage.removeItem("jwt");
+    localStorage.removeItem("id");
+    localStorage.removeItem("username");
     this.setState({
       currentUser: null
     });
