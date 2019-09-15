@@ -48,7 +48,7 @@ class SideBar extends React.Component {
           height: collapsed ? "100vh" : "100vh"
         }}
       >
-        <button className="my-button" onClick={this.toggleSidebar}>
+        <button className="sidebar-button" onClick={this.toggleSidebar}>
           {collapsed ? "☰" : "X"}
         </button>
         <div className="sidebar text-center d-flex flex-column align-items-center ">
