@@ -7,7 +7,7 @@ import { ReactComponent as UploadingSvg } from "../images/uploading.svg";
 
 
 
-const HowDoesItWork = () => (
+const HowDoesItWork = ({ history }) => (
   <>
     <div style={{ "backgroundColor": "#fefefe" }} className="mx-4 my-2 p-2 how-does-it-work">
       <h4>How does it work?</h4>
@@ -34,7 +34,7 @@ const HowDoesItWork = () => (
         </div>
       </div>
       <div style={{ "width": "100%", "display": "flex", "justifyContent": "center" }}>
-        <CallToAction />
+        <CallToAction history={history} />
       </div>
 
     </div>

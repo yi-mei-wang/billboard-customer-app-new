@@ -42,7 +42,7 @@ class Homepage extends React.Component {
       // <Selection history={history} /> 
       <>
         <Headings />
-        <HowDoesItWork />
+        <HowDoesItWork history={history} />
       </>
 
 
