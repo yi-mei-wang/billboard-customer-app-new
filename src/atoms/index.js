@@ -16,6 +16,7 @@ const BottomContainer = styled.div`
   position: fixed;
   bottom: 0;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+  margin-top: 50px;
 `;
 
 const Bottom = styled.div`

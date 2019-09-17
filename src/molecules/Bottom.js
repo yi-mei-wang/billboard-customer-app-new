@@ -2,7 +2,7 @@ import React from "react";
 import { ReactComponent as AddSvg } from "../images/add.svg";
 import { ReactComponent as PastAds } from "../images/list.svg";
 import { ReactComponent as FutureAds } from "../images/calendar.svg";
-import { Bottom, BottomContainer, AddButton, AddButtonBackground, Button, NavLinks } from "../atoms"
+import { Bottom, BottomContainer, AddButton, AddButtonBackground, Button } from "../atoms"
 
 
 const BottomBar = ({ history }) => {
