@@ -4,7 +4,7 @@ import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import { Table } from "reactstrap";
 import { DOMAIN_URL } from "../../constants";
-import Summary from "./Summary";
+// import Summary from "./Summary";
 
 class ScheduledAds extends React.Component {
   state = {

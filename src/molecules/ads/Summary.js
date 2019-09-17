@@ -5,13 +5,13 @@ import Moment from "react-moment";
 import { DOMAIN_URL } from "../../constants";
 import { Underline } from "../../atoms";
 
-const ThumbsContainer = styled.aside`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-top: 16px;
-  justify-content: center;
-`;
+// const ThumbsContainer = styled.aside`
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   margin-top: 16px;
+//   justify-content: center;
+// `;
 
 const Thumb = styled.div`
   display: inline-flex;

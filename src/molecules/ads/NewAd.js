@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Moment from "react-moment";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import styled from "styled-components";
 import Calendar from "../Calendar";
 import Uploader from "../Uploader";
@@ -117,13 +117,13 @@ class NewAd extends Component {
       });
   };
 
-  componentDidUpdate() {
-    this.scrollToBottom();
-  }
+  // componentDidUpdate() {
+  //   this.scrollToBottom();
+  // }
 
-  scrollToBottom = () => {
-    this.pageEnd.scrollIntoView({ behavior: "smooth" });
-  };
+  // scrollToBottom = () => {
+  //   this.pageEnd.scrollIntoView({ behavior: "smooth" });
+  // };
 
   handleSubmit = e => {
     e.preventDefault();
@@ -137,9 +137,9 @@ class NewAd extends Component {
     let failedCopy = [];
     failedCopy = [...failedImgs];
     let formData = new FormData();
-    imgs.map(file => {
-      formData.append(`file`, file);
-    });
+    imgs.map(file => (
+      formData.append(`file`, file)
+    ));
     formData.append("chosenDate", chosenDate.getTime());
     formData.append("auth_token", localStorage.getItem("jwt"));
 
@@ -150,6 +150,7 @@ class NewAd extends Component {
         }
       })
       .then(response => {
+        console.log(response)
         let order_id_2 = response.data.order_id;
 
         let errors = response.data.errors;
@@ -266,12 +267,12 @@ class NewAd extends Component {
             </small>
             </div>
           )}
-        <div
+        {/* <div
           style={{ float: "left", clear: "both" }}
           ref={el => {
             this.pageEnd = el;
           }}
-        />
+        /> */}
       </div>
     );
   }

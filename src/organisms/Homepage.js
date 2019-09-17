@@ -1,21 +1,21 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import styled from "styled-components";
 import BottomBar from "../molecules/Bottom";
 import Headings from "../molecules/Headings";
 import HowDoesItWork from "../molecules/HowDoesItWork";
-import Navbar from "../molecules/Navbar";
+// import Navbar from "../molecules/Navbar";
 import SideBar from "../molecules/SideBar";
 import ExpiredAds from "../molecules/ads/ExpiredAds";
 import ResultMessage from "../molecules/ResultMessage";
 import NewAd from "../molecules/ads/NewAd";
 import ScheduledAds from "../molecules/ads/ScheduledAds";
-import Selection from "../molecules/ads/Selection";
+// import Selection from "../molecules/ads/Selection";
 import Summary from "../molecules/ads/Summary";
 import background from "../images/background.jpg"
 
 const Main = styled.div`
-  // padding-top: 50px;
+  margin-bottom: 150px;
 `;
 
 const BackgroundImage = styled.div`
@@ -31,24 +31,20 @@ const BackgroundImage = styled.div`
   `;
 
 class Homepage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const { history, currentUser } = this.props;
 
-    // if (!currentUser) return <Redirect to="/login" />;
+    if (!currentUser) return <Redirect to="/login" />;
 
     let Container =
-      this.props.match.url === "/" ?
-        // <Selection history={history} /> 
-        <>
-          <Headings />
-          <HowDoesItWork />
-        </>
-        :
-        <h1 />;
+      this.props.match.url === "/" &&
+      // <Selection history={history} /> 
+      <>
+        <Headings />
+        <HowDoesItWork />
+      </>
+
 
     return (
       <>
