@@ -72,7 +72,6 @@ class Homepage extends React.Component {
             />
             <Route exact path="/result" component={props => <ResultMessage {...props} />} />
             <Route
-              exact
               path="/:id"
               component={props => (
                 <Summary {...props} orderId={props.match.params.id} />

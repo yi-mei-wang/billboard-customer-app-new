@@ -103,12 +103,12 @@ class NewAd extends Component {
         const status = response.data.status;
         if (status === "ok") {
           this.props.history.push({
-            pathname: "/mes",
+            pathname: "/result",
             state: { response: "Success" }
           });
         } else {
           this.props.history.push({
-            pathname: "/mes",
+            pathname: "/result",
             state: { response: "Fail" }
           });
         }

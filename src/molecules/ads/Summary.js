@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Moment from "react-moment";
 import { DOMAIN_URL } from "../../constants";
 import { Underline } from "../../atoms";
+import AdContainer from "./AdContainer";
 
 // const ThumbsContainer = styled.aside`
 //   display: flex;
@@ -71,20 +72,22 @@ class Summary extends React.Component {
       </Thumb>
     ));
 
-    return (
-      <div className={"px-4"}>
-        <h2 className={"pt-4 m-0"}>Order {orders.order_id}</h2>
-        <Underline />
+    const child = <>
+      <h2 className={"pt-4 m-0"}>Order {orders.order_id}</h2>
+      <Underline />
 
-        <p>
-          Selected date :{" "}
-          <Moment format="YYYY/MM/DD">{orders.start_time}</Moment>
-          <br />
-          Selected time slot:{" "}
-          <Moment format="HH:mm">{orders.start_time}</Moment>
-        </p>
-        {Imgs}
-      </div>
+      <p>
+        Selected date :{" "}
+        <Moment format="YYYY/MM/DD">{orders.start_time}</Moment>
+        <br />
+        Selected time slot:{" "}
+        <Moment format="HH:mm">{orders.start_time}</Moment>
+      </p>
+      {Imgs}
+    </>;
+
+    return (
+      <AdContainer child={child} />
     );
   }
 }
