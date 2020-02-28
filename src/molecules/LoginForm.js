@@ -121,7 +121,7 @@ class LoginModal extends React.Component {
           </FormGroup>
         </Form>
         <FormText className="text-center">
-          New member?
+          New member?{" "}
           <Link
             onClick={e => {
               this.props.handleToggle(e);

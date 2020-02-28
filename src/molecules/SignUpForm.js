@@ -162,13 +162,13 @@ class SignUpModal extends React.Component {
               {this.state.password === this.state.confirmPassword ? (
                 <br />
               ) : (
-                <FormText color="danger">Passwords do not match</FormText>
-              )}
+                  <FormText color="danger">Passwords do not match</FormText>
+                )}
             </Col>
           </FormGroup>
         </Form>
         <FormText className="text-center">
-          Already a member?
+          Already a member?{" "}
           <Link
             onClick={e => {
               this.props.handleToggle(e);
@@ -186,9 +186,9 @@ class SignUpModal extends React.Component {
             style={{ backgroundColor: "#d79922 !important" }}
             disabled={Boolean(
               this.state.username === "" ||
-                this.state.email === "" ||
-                this.state.password === "" ||
-                this.state.confirmPassword === ""
+              this.state.email === "" ||
+              this.state.password === "" ||
+              this.state.confirmPassword === ""
             )}
             onClick={() => {
               this.handleSignUp();

@@ -7,7 +7,7 @@ class FormContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoginForm: false
+      isLoginForm: this.props.match.path === "/login"
     };
   }
 
@@ -23,17 +23,19 @@ class FormContainer extends React.Component {
     if (currentUser) return <Redirect to="/" />;
     const { isLoginForm } = this.state;
     let Container =
-      isLoginForm !== false ? (
+      isLoginForm ? (
         <LoginForm
           handleToggle={this.handleToggle}
           setUser={this.props.setUser}
+          {...this.props}
         />
       ) : (
-        <SignUpForm
-          handleToggle={this.handleToggle}
-          setUser={this.props.setUser}
-        />
-      );
+          <SignUpForm
+            handleToggle={this.handleToggle}
+            setUser={this.props.setUser}
+            {...this.props}
+          />
+        );
 
     return <div className="formDis">{Container}</div>;
   }
