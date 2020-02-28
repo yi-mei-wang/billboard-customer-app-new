@@ -9,7 +9,7 @@ import { ReactComponent as UploadingSvg } from "../images/uploading.svg";
 
 const HowDoesItWork = ({ history }) => (
   <>
-    <div style={{ "backgroundColor": "#fefefe" }} className="mx-4 my-2 p-2 how-does-it-work">
+    <div style={{ "backgroundColor": "#fefefe" }} className="mx-4 my-2 p-2 pb-4 how-does-it-work">
       <h4>How does it work?</h4>
       <Underline style={{ "width": "100px", "backgroundColor": "#38a9ff" }} />
 

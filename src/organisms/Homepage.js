@@ -15,7 +15,8 @@ import Summary from "../molecules/ads/Summary";
 import background from "../images/background.jpg"
 
 const Main = styled.div`
-  margin-bottom: 150px;
+  padding-bottom: 150px;
+  background-color: #002366;
 `;
 
 const BackgroundImage = styled.div`
@@ -50,7 +51,7 @@ class Homepage extends React.Component {
       <>
         {/* <Navbar history={history} removeUser={this.props.removeUser} /> */}
         <SideBar history={history} removeUser={this.props.removeUser} />
-        <BackgroundImage />
+        {/* <BackgroundImage /> */}
         <Main>
           <Switch>
             <Route
