@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Table } from "reactstrap";
 import { DOMAIN_URL } from "../../constants";
 // import Summary from "./Summary";
+import AdContainer from "./AdContainer"
 
 class ScheduledAds extends React.Component {
   state = {
@@ -44,30 +45,35 @@ class ScheduledAds extends React.Component {
       </>
     ));
 
-    return (
-      <>
-        <div className={"px-4"}>
-          <h2 className={"pt-4 m-0"}>FUTURE ADs</h2>
-          <span
-            className={"underline mb-2"}
-            style={{
-              backgroundColor: "#ffbf00",
-              width: "200px",
-              height: "10px",
-              display: "inline-block"
-            }}
-          />
+    const child = <>
+      <h2 className={"pt-4 m-0"}>FUTURE ADs</h2>
+      <span
+        className={"underline mb-2"}
+        style={{
+          backgroundColor: "#ffbf00",
+          width: "200px",
+          height: "10px",
+          display: "inline-block"
+        }}
+      />
 
-          <Table className={"mt-3"}>
-            <tbody>
-              <tr>
-                <th>Id</th> <th>Date</th>
-              </tr>
-              {summaryTable}
-            </tbody>
-          </Table>
-        </div>
-      </>
+      {orders.length ?
+        <Table className={"mt-3"}>
+          <tbody>
+            <tr>
+              <th>Id</th> <th>Date</th>
+            </tr>
+            {summaryTable}
+          </tbody>
+        </Table>
+        :
+        <div>
+          Nothing is here. <Link to="/new">Schedule an ad now!</Link>
+        </div>}
+    </>;
+
+    return (
+      <AdContainer child={child} />
     );
   }
 }

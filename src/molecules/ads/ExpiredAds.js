@@ -4,6 +4,7 @@ import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import { Table } from "reactstrap";
 import { DOMAIN_URL } from "../../constants";
+import AdContainer from "./AdContainer";
 // import Summary from "./Summary";
 
 class ExpiredAds extends React.Component {
@@ -44,20 +45,19 @@ class ExpiredAds extends React.Component {
       </>
     ));
 
-    return (
+    const adChild =
       <>
-        <div className={"px-4"}>
-          <h2 className={"pt-4 m-0"}>PAST ADs</h2>
-          <span
-            className={"underline mb-2"}
-            style={{
-              backgroundColor: "#ffbf00",
-              width: "200px",
-              height: "10px",
-              display: "inline-block"
-            }}
-          />
-
+        <h2 className={"pt-4 m-0"}>PAST ADs</h2>
+        <span
+          className={"underline mb-2"}
+          style={{
+            backgroundColor: "#ffbf00",
+            width: "200px",
+            height: "10px",
+            display: "inline-block"
+          }}
+        />
+        {orders.length ?
           <Table className={"mt-3"}>
             <tbody>
               <tr>
@@ -66,8 +66,14 @@ class ExpiredAds extends React.Component {
               {summaryTable}
             </tbody>
           </Table>
-        </div>
-      </>
+          :
+          <div>
+            Nothing is here. <Link to="/new">Schedule an ad now!</Link>
+          </div>}
+      </>;
+
+    return (
+      <AdContainer child={adChild} />
     );
   }
 }

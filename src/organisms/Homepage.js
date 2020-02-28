@@ -15,9 +15,10 @@ import Summary from "../molecules/ads/Summary";
 import background from "../images/background.jpg"
 
 const Main = styled.div`
-  padding-bottom: 150px;
-  background-color: #002366;
+background-color: #002366;
+min-height: 100vh;
 `;
+// padding-bottom: 125px;
 
 const BackgroundImage = styled.div`
   background-image: url(${background});

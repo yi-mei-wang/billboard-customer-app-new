@@ -8,14 +8,16 @@ import Uploader from "../Uploader";
 import LoadSpinner from "../LoadSpinner";
 import { DOMAIN_URL } from "../../constants";
 import { Underline } from "../../atoms";
+import AdContainer from "./AdContainer";
+
 
 const Button = styled.button`
   background-color: white;
-  color: palevioletred;
+  color: #002366;
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border: 2px solid palevioletred;
+  border: 2px solid #002366;
   border-radius: 3px;
 `;
 
@@ -192,8 +194,8 @@ class NewAd extends Component {
       </div>
     ));
 
-    return (
-      <div className={"px-4 mb-5"}>
+    const newAdChild =
+      <>
         <h2 className={"pt-4 m-0"}>New ADs</h2>
         <Underline />
         <form onSubmit={this.handleSubmit} className={"mx-auto"}>
@@ -273,8 +275,11 @@ class NewAd extends Component {
             this.pageEnd = el;
           }}
         /> */}
-      </div>
-    );
+      </>
+
+    return (
+      <AdContainer child={newAdChild} />
+    )
   }
 }
 

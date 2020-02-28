@@ -82,6 +82,10 @@ class LoginModal extends React.Component {
         <div className="text-center my-3">
           <img src={logo} className="logo" alt="logo" />
         </div>
+        <div style={{ width: "100%", "text-align": "center" }}>
+          <h2>Log In</h2>
+        </div>
+
         <Form>
           <FormGroup row>
             <Col sm={12}>
