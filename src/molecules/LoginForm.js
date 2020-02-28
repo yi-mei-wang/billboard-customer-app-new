@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import styled from "styled-components";
 import {
   Form,
   FormGroup,
@@ -11,17 +10,8 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import logo from "../images/advengerslogo.png";
-import { ReactComponent as Loader } from "../images/ballon.svg";
 import { DOMAIN_URL } from "../constants";
-
-const LoginButton = styled.button`
-  text-align: center;
-  color: #222;
-  background-color: #d79922;
-  border: none;
-  width: 150px;
-  height: 40px;
-`;
+import { ButtonWithLoader } from "../atoms/Button";
 
 class LoginModal extends React.Component {
   state = {
@@ -75,6 +65,8 @@ class LoginModal extends React.Component {
             localStorage.setItem("id", response.data.user.id);
             localStorage.setItem("username", response.data.user.username);
             this.props.setUser(response.data.user);
+            break;
+          default:
             break;
         }
       })
@@ -135,19 +127,12 @@ class LoginModal extends React.Component {
         </FormText>
         <br />
         <div className="text-center">
-          <LoginButton
-            className={
-              this.state.username !== "" && this.state.password !== ""
-                ? ""
-                : "disabled"
-            }
-            onClick={() => {
-              this.handleLogin();
-            }}
-          >
-            Login
-            {loading && <Loader />}
-          </LoginButton>{" "}
+          <ButtonWithLoader
+            handleClick={this.handleLogin}
+            enabled={this.state.username !== "" && this.state.password !== ""}
+            text="Login"
+            loading={loading}
+          />
         </div>
       </div>
     );

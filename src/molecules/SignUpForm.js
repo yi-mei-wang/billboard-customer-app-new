@@ -2,7 +2,6 @@ import React from "react";
 import Axios from "axios";
 import {
   Col,
-  Button,
   Form,
   FormFeedback,
   FormGroup,
@@ -12,6 +11,7 @@ import {
 import { Link, withRouter } from "react-router-dom";
 import logo from "../images/advengerslogo.png";
 import { DOMAIN_URL } from "../constants";
+import { ButtonWithLoader } from "../atoms/Button"
 
 class SignUpModal extends React.Component {
   state = {
@@ -21,7 +21,8 @@ class SignUpModal extends React.Component {
     confirmPassword: "",
     resultMes: "",
     invalidEmail: false,
-    invalidUsername: false
+    invalidUsername: false,
+    loading: false
   };
 
   handleUsernameChange = event => {
@@ -42,6 +43,9 @@ class SignUpModal extends React.Component {
 
   handleSignUp = () => {
     const { username, email, password } = this.state;
+
+    this.setState({ loading: true });
+
     Axios({
       method: "POST",
       url: `${DOMAIN_URL}/api/v1/users/create`,
@@ -73,6 +77,8 @@ class SignUpModal extends React.Component {
               invalidEmail: true
             });
             break;
+          default:
+            break;
         }
       })
       .catch((error, response) => {
@@ -82,6 +88,7 @@ class SignUpModal extends React.Component {
   };
 
   render() {
+    const { loading } = this.state;
     return (
       <div>
         <div className="text-center my-3">
@@ -182,20 +189,17 @@ class SignUpModal extends React.Component {
         </FormText>
         <br />
         <div className="text-center">
-          <Button
-            style={{ backgroundColor: "#d79922 !important" }}
-            disabled={Boolean(
+          <ButtonWithLoader
+            enabled={!Boolean(
               this.state.username === "" ||
               this.state.email === "" ||
               this.state.password === "" ||
               this.state.confirmPassword === ""
             )}
-            onClick={() => {
-              this.handleSignUp();
-            }}
-          >
-            Sign Up
-          </Button>
+            handleClick={this.handleSignUp}
+            text="Sign Up"
+            loading={loading}
+          />
         </div>
       </div>
     );
