@@ -13,11 +13,11 @@ import AdContainer from "./AdContainer";
 
 const Button = styled.button`
   background-color: white;
-  color: #002366;
+  color: #38a9ff;
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border: 2px solid #002366;
+  border: 2px solid #38a9ff;
   border-radius: 3px;
 `;
 
