@@ -17,7 +17,7 @@ import { DOMAIN_URL } from "../constants";
 const LoginButton = styled.button`
   text-align: center;
   color: #222;
-  background-color: pink;
+  background-color: #d79922;
   border: none;
   width: 150px;
   height: 40px;
@@ -122,7 +122,16 @@ class LoginModal extends React.Component {
         </Form>
         <FormText className="text-center">
           New member?
-          <Link onClick={e => this.props.handleToggle(e)}> Sign Up Now</Link>
+          <Link
+            onClick={e => {
+              this.props.handleToggle(e);
+              this.props.history.push({
+                pathname: "/signup"
+              });
+            }}
+          >
+            Sign Up Now
+          </Link>
         </FormText>
         <br />
         <div className="text-center">
@@ -137,11 +146,7 @@ class LoginModal extends React.Component {
             }}
           >
             Login
-            {
-              loading
-              && <Loader />
-            }
-
+            {loading && <Loader />}
           </LoginButton>{" "}
         </div>
       </div>

@@ -3,7 +3,6 @@ import LoginForm from "../molecules/LoginForm";
 import SignUpForm from "../molecules/SignUpForm";
 import { Redirect } from "react-router-dom";
 
-
 class FormContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -21,14 +20,15 @@ class FormContainer extends React.Component {
 
   render() {
     const { currentUser } = this.props;
-    if (currentUser) return <Redirect to='/' />;
+    if (currentUser) return <Redirect to="/" />;
     const { isLoginForm } = this.state;
-    let Container = isLoginForm !== false ? (
-      <LoginForm
-        handleToggle={this.handleToggle}
-        setUser={this.props.setUser}
-      />
-    ) : (
+    let Container =
+      isLoginForm !== false ? (
+        <LoginForm
+          handleToggle={this.handleToggle}
+          setUser={this.props.setUser}
+        />
+      ) : (
         <SignUpForm
           handleToggle={this.handleToggle}
           setUser={this.props.setUser}

@@ -87,7 +87,7 @@ class SignUpModal extends React.Component {
         <div className="text-center my-3">
           <img src={logo} className="logo" alt="logo" />
         </div>
-        <div style={{ "width": "100%", "text-align": "center" }}>
+        <div style={{ width: "100%", "text-align": "center" }}>
           <h2>Sign Up</h2>
         </div>
         <Form>
@@ -162,24 +162,33 @@ class SignUpModal extends React.Component {
               {this.state.password === this.state.confirmPassword ? (
                 <br />
               ) : (
-                  <FormText color="danger">Passwords do not match</FormText>
-                )}
+                <FormText color="danger">Passwords do not match</FormText>
+              )}
             </Col>
           </FormGroup>
         </Form>
         <FormText className="text-center">
           Already a member?
-          <Link onClick={e => this.props.handleToggle(e)}> Log In Here</Link>
+          <Link
+            onClick={e => {
+              this.props.handleToggle(e);
+              this.props.history.push({
+                pathname: "/login"
+              });
+            }}
+          >
+            Log In Here
+          </Link>
         </FormText>
         <br />
         <div className="text-center">
           <Button
-            style={{ "backgroundColor": "#d79922 !important" }}
+            style={{ backgroundColor: "#d79922 !important" }}
             disabled={Boolean(
               this.state.username === "" ||
-              this.state.email === "" ||
-              this.state.password === "" ||
-              this.state.confirmPassword === ""
+                this.state.email === "" ||
+                this.state.password === "" ||
+                this.state.confirmPassword === ""
             )}
             onClick={() => {
               this.handleSignUp();

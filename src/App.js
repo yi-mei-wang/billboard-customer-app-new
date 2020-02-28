@@ -54,6 +54,17 @@ class App extends React.Component {
               />
             )}
           />
+          <Route
+            exact
+            path="/signup"
+            component={props => (
+              <FormContainer
+                {...props}
+                currentUser={currentUser}
+                setUser={this.setUser}
+              />
+            )}
+          />
           {/* Homepage*/}
           <Route
             exact
